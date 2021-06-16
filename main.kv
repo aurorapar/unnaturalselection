@@ -1,0 +1,18 @@
+#:import TitleScreen title_screen.title_screen
+#:import LoginScreen login_screen.login_screen
+
+ScreenManager:
+    id: manager
+
+    LoadScreen:
+    TitleScreen:
+    LoginScreen:
+
+<LoadScreen>:
+    id: load_screen
+    name: "load_screen"
+
+    Label:
+        id: load_screen_label
+        name: "load_screen_label"
+        text: "Loading..."
