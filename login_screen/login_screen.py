@@ -8,19 +8,8 @@ from kivymd.uix.button import MDFlatButton
 
 class PasswordDialogue(MDDialog):
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.on_release = self.dismiss
-        self.name = "password_dialogue",
-        self.buttons = [
-            MDFlatButton(
-                text="OK"
-            ),
-            MDFlatButton(
-                text="Close",
-                on_release=self.dismiss
-            )
-        ]
+    def on_open(self):
+        print("opening")
 
 
 class LoginScreen(Screen):
@@ -30,9 +19,24 @@ class LoginScreen(Screen):
         if len(self.ids.password_textfield.text) < 1:
             return
 
-        dialogue = PasswordDialogue()
-        dialogue.text = self.ids.password_textfield.text
-        dialogue.open()
+        self.dialogue = MDDialog(
+            type = 'custom',
+            title = "Forgot Password",
+            buttons = [
+                MDFlatButton(
+                    text="OK"
+                ),
+                MDFlatButton(
+                    text="Cancel",
+                    on_release=self.dismiss
+                )
+            ]
+        )
+        self.dialogue.text = self.ids.password_textfield.text
+        self.dialogue.open()
+
+    def dismiss(self):
+        self.dialogue.dismiss()
 
 load_kv()
 
