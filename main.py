@@ -20,7 +20,7 @@ os.environ["UNNATURAL_SELECTION_ASSETS"] = os.path.join(
 
 
 class LoadScreen(Screen):
-    #lets do Database and Animation stuff here
+    # lets do Database and Animation stuff here
     pass
 
 
