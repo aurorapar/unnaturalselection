@@ -1,5 +1,7 @@
 from utils import load_kv
 
+from database.user.identifier import Identifier
+
 from kivyauth.google_auth import initialize_google, login_google, logout_google
 from kivyauth.utils import login_providers
 
@@ -23,6 +25,8 @@ class LoginScreen(Screen):
 
     def __init__(self, **kwargs):
         super(LoginScreen, self).__init__(**kwargs)
+
+        user_id = Identifier()
 
         initialize_google(self.after_login,
                           self.error_listener,
