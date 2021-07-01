@@ -6,6 +6,8 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen
 
+__version__ = "Pre-Alpha"
+
 os.environ["KIVY_PROFILE_LANG"] = "1"
 
 if getattr(sys, "frozen", False):  # bundle mode with PyInstaller

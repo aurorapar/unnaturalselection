@@ -1,13 +1,22 @@
-
 <LoginScreen@LoadScreen>:
     id: login_screen
     name: "login_screen"
 
+    MDTextField:
+        id: phonenumber_textfield
+        name: 'phonenumber_textfield'
+        hint_text: "Enter Your Phone Number (Verification Only)"
+        helper_text: "(Enter Country Code if Outside US)"
+        helper_text_mode: "persistent"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint_x: None
+        width: 400
+
     MDRectangleFlatButton:
-        id: google_login_button
-        name: 'google_login_button'
-        text: "Login with Google Account"
-        pos_hint: {'center_x': .4, 'center_y': .4}
+        id: submit_button
+        name: 'submit_button'
+        text: "Submit"
+        pos_hint: {'center_x': .5, 'center_y': .4}
         theme_text_color: 'Custom'
         text_color: (100 / 255.0, 100 / 255.0, 100 / 255.0, .8)
-        on_release: root.start_google_login()
+        on_release: root.submit_phonenumber()
